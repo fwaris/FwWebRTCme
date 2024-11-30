@@ -988,17 +988,23 @@ namespace Webrtc
 	////[Verify (ConstantsInterfaceAssociation)]
 	partial interface Constants
 	{
+		/*
 		// extern NSString *const _Nonnull kRTCAudioSessionErrorDomain;
 		[Field ("kRTCAudioSessionErrorDomain", "__Internal")]
 		NSString kRTCAudioSessionErrorDomain { get; }
-
+		*/
+		
+		/*
 		// extern const NSInteger kRTCAudioSessionErrorLockRequired;
 		[Field ("kRTCAudioSessionErrorLockRequired", "__Internal")]
 		nint kRTCAudioSessionErrorLockRequired { get; }
-
+		*/
+		
+		/*
 		// extern const NSInteger kRTCAudioSessionErrorConfiguration;
 		[Field ("kRTCAudioSessionErrorConfiguration", "__Internal")]
 		nint kRTCAudioSessionErrorConfiguration { get; }
+		*/
 	}
 
 	// @protocol RTCAudioSessionDelegate <NSObject>
@@ -2391,13 +2397,17 @@ namespace Webrtc
     ////[Verify (ConstantsInterfaceAssociation)]
     partial interface Constants
 	{
+		/*
 		// extern NSString *const _Nonnull kRTCPeerConnectionErrorDomain;
 		[Field ("kRTCPeerConnectionErrorDomain", "__Internal")]
 		NSString kRTCPeerConnectionErrorDomain { get; }
-
+		*/
+		
+		/*
 		// extern const int kRTCSessionDescriptionErrorCode;
 		[Field ("kRTCSessionDescriptionErrorCode", "__Internal")]
 		int kRTCSessionDescriptionErrorCode { get; }
+		*/
 	}
 
 	// typedef void (^RTCCreateSessionDescriptionCompletionHandler)(RTCSessionDescription * _Nullable, NSError * _Nullable);
@@ -2816,11 +2826,13 @@ namespace Webrtc
 		// extern const NSString *const _Nonnull kRTCOpusCodecName;
 		[Field ("kRTCOpusCodecName", "__Internal")]
 		NSString kRTCOpusCodecName { get; }
-
+		
+		/*
 		// extern const NSString *const _Nonnull kRTCIsacCodecName;
 		[Field ("kRTCIsacCodecName", "__Internal")]
 		NSString kRTCIsacCodecName { get; }
-
+		*/
+		
 		// extern const NSString *const _Nonnull kRTCL16CodecName;
 		[Field ("kRTCL16CodecName", "__Internal")]
 		NSString kRTCL16CodecName { get; }
@@ -3135,9 +3147,11 @@ namespace Webrtc
     ////[Verify (ConstantsInterfaceAssociation)]
     partial interface Constants
 	{
+		/*
 		// extern NSString *const _Nonnull kRTCRtpTransceiverErrorDomain;
 		[Field ("kRTCRtpTransceiverErrorDomain", "__Internal")]
 		NSString kRTCRtpTransceiverErrorDomain { get; }
+		*/
 	}
 
 	// @interface RTCRtpTransceiverInit : NSObject
