@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+	  <TargetFrameworks>net9.0; net9.0-windows;</TargetFrameworks>
+	  <!-- TODO: HOW TO ADD LINUX, BY USING tvos ??? -->
+	  <ImplicitUsings>enable</ImplicitUsings>
+
+  </PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)' == 'net7.0-tvos16.4'">
+		<DefineConstants>LINUX</DefineConstants>
+	</PropertyGroup>
+	<ItemGroup>
+	  <Content Include="WebRtcInterop.dll">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="webrtc.dll">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+	
+
+</Project>

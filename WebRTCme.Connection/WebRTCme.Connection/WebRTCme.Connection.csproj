@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net9.0</TargetFrameworks>
+  </PropertyGroup>
+
+	<ItemGroup>
+    <PackageReference Include="Utilme.Result" Version="1.0.1" />
+    <PackageReference Include="Utilme.SdpTransform" Version="1.0.0" />
+		<PackageReference Include="System.Reactive.Core" Version="6.0.1" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.0" />
+	</ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\MediaSoup\WebRTCme.Connection.MediaSoup.Proxy\WebRTCme.Connection.MediaSoup.Proxy.csproj" />
+    <ProjectReference Include="..\Signaling\WebRTCme.Connection.Signaling.Proxy\WebRTCme.Connection.Signaling.Proxy.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net9.0</TargetFrameworks>
+  </PropertyGroup>
+
+
+	<ItemGroup>
+    <ProjectReference Include="..\..\..\WebRTCme\WebRTCme.csproj" />
+  </ItemGroup>
+
+
+
+	<ItemGroup>
+	    <PackageReference Include="System.Reactive" Version="6.0.1" />
+		<PackageReference Include="Utilme.Result" Version="1.0.1" />
+		<PackageReference Include="Utilme.SdpTransform" Version="1.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.0" />
+	</ItemGroup>
+
+</Project>

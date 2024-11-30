@@ -1,0 +1,105 @@
+﻿<Project Sdk="MSBuild.Sdk.Extras/3.0.44">
+	<PropertyGroup>
+		<TargetFrameworks>net9.0;net9.0-android;net9.0-ios;net9.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net9.0-windows10.0.22621.0</TargetFrameworks>
+		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">12.4</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">28.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.22621.0</TargetPlatformMinVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">15.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'macos'">12.0</SupportedOSPlatformVersion>
+		<ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(TargetFramework)' == 'net9.0-android'">
+		<UseMaui>true</UseMaui>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)' == 'net9.0-ios'">
+		<UseMaui>true</UseMaui>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)' == 'net9.0-windows10.0.22621.0'">
+		<UseMaui>true</UseMaui>
+	</PropertyGroup>
+
+
+	<PropertyGroup Condition="'$(TargetFramework)' == 'net9.0-maccatalyst'">
+		<UseMaui>true</UseMaui>
+	</PropertyGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net9.0'">
+		<Compile Include="**\Blazor\**\*.cs" />
+		<Compile Include="*.cs" />
+		<ProjectReference Include="..\WebRTCme.Bindings\WebRTCme.Bindings.Blazor\WebRTCme.Bindings.Blazor.csproj" />
+<!--		<PackaPackageReferencegeReference Include="Microsoft.JSInterop" Version="8.0.1" />-->	
+			<PackageReference Include="Microsoft.Maui.Essentials" Version="9.0.10" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net9.0-android'">
+		<Compile Include="**\Android\**\*.cs" />
+		<Compile Include="*.cs" />
+		<ProjectReference Include="..\WebRTCme.Bindings\Maui\WebRTCme.Bindings.Maui.Android\WebRTCme.Bindings.Maui.Android.csproj" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.6" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.6" />
+		<PackageReference Include="Microsoft.JSInterop" Version="9.0.0" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net9.0-ios'">
+		<Compile Include="**\iOS\**\*.cs" />
+		<Compile Include="*.cs" />
+		<ProjectReference Include="..\WebRTCme.Bindings\Maui\WebRTCme.Bindings.Maui.iOS\WebRTCme.Bindings.Maui.iOS.csproj" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.10" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="9.0.10" />
+		<PackageReference Include="Microsoft.JSInterop" Version="9.0.0" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net9.0-windows10.0.22621.0'">
+		<Compile Include="**\Windows\**\*.cs" />
+		<Compile Include="*.cs" />
+		<Compile Include="**\Shared\SipSorcery\**\*.cs" />
+		<ProjectReference Include="..\WebRTCme.Bindings\WebRTCme.Bindings.SipSorcery\WebRTCme.Bindings.SipSorcery.csproj" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.10" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="9.0.10" />
+		<PackageReference Include="Microsoft.JSInterop" Version="9.0.0" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net9.0-maccatalyst'">
+		<Compile Include="**\MacCatalyst\**\*.cs" />
+		<Compile Include="*.cs" />
+		<Compile Include="**\Shared\SipSorcery\**\*.cs" />
+		<ProjectReference Include="..\WebRTCme.Bindings\WebRTCme.Bindings.SipSorcery\WebRTCme.Bindings.SipSorcery.csproj" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.10" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="9.0.10" />
+		<PackageReference Include="Microsoft.JSInterop" Version="9.0.0" />
+	</ItemGroup>
+<!--
+	<ItemGroup Condition="'$(TargetFramework)' == 'net9.0-macos'">
+		<Compile Include="**\macOS\**\*.cs" />
+		<Compile Include="*.cs" />
+		<Compile Include="**\Shared\SipSorcery\**\*.cs" />
+		<ProjectReference Include="..\WebRTCme.Bindings\WebRTCme.Bindings.SipSorcery\WebRTCme.Bindings.SipSorcery.csproj" />
+		<PackageReference Include="Microsoft.JSInterop" Version="9.0.0" />
+	</ItemGroup>
+-->
+	<ItemGroup>
+		<ProjectReference Include="..\WebRTCme.Api\WebRTCme.Api.csproj" />
+	</ItemGroup> 	
+
+	<ItemGroup>
+	  <None Include="..\me.png" Link="me.png">
+	    <PackagePath></PackagePath>
+	    <Pack>True</Pack>
+	  </None>
+	</ItemGroup> 	
+
+	<ItemGroup>
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	  <PackageReference Include="System.Private.Uri" Version="4.3.2" />
+	</ItemGroup> 	
+
+</Project>

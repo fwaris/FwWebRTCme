@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<TargetFrameworks>net9.0</TargetFrameworks>
+	  <RootNamespace>WebRTCme</RootNamespace>
+	  <UserSecretsId>a419948c-ce76-4240-bd44-60047b666b15</UserSecretsId>
+	  <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+	  <Authors>melihercan</Authors>
+	  <Description>WebRTCme API library.</Description>
+	  <Copyright>melihercan 2024</Copyright>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <PackageProjectUrl>https://github.com/melihercan/WebRTCme</PackageProjectUrl>
+	  <PackageIcon>me.png</PackageIcon>
+	  <PackageIconUrl />
+	  <RepositoryUrl>https://github.com/melihercan/WebRTCme/tree/master/WebRTCme.Api</RepositoryUrl>
+	  <RepositoryType>git</RepositoryType>
+	  <PackageTags>WebRTC MAUI Android iOS .NET Blazor</PackageTags>
+	  <PackageReleaseNotes>New major release.</PackageReleaseNotes>
+	  <Version>2.0.0</Version>
+  </PropertyGroup>
+
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Components" Version="9.0.0" />
+		<PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="9.0.0" />
+		<PackageReference Include="Macross.Json.Extensions" Version="3.0.0" />
+		<PackageReference Include="System.Text.Json" Version="9.0.0" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<None Include="..\me.png">
+		  <Pack>True</Pack>
+		<PackagePath></PackagePath>
+		</None>
+  </ItemGroup>
+
+</Project>
